@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from '@prisma/client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 type LinkFormProps = {
     initialData?: Link;
@@ -71,10 +74,10 @@ const LinkForm: React.FC<LinkFormProps> = ({ initialData, onSubmit }) => {
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-                <label htmlFor="url" className="block text-sm font-medium text-gray-700">
+                <Label htmlFor="url" className="block text-sm font-medium text-gray-700">
                     URL
-                </label>
-                <input
+                </Label>
+                <Input
                     id="url"
                     type="url"
                     value={url}
@@ -84,10 +87,10 @@ const LinkForm: React.FC<LinkFormProps> = ({ initialData, onSubmit }) => {
                 />
             </div>
             <div>
-                <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                <Label htmlFor="title" className="block text-sm font-medium text-gray-700">
                     Title
-                </label>
-                <input
+                </Label>
+                <Input
                     id="title"
                     type="text"
                     value={title}
@@ -97,12 +100,13 @@ const LinkForm: React.FC<LinkFormProps> = ({ initialData, onSubmit }) => {
                 />
             </div>
             {error && <p className="text-red-500">{error}</p>}
-            <button
+            <Button
+                variant="secondary"
                 type="submit"
                 className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
                 {initialData ? 'Update' : 'Add'} Link
-            </button>
+            </Button>
         </form>
     );
 };

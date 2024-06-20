@@ -75,34 +75,28 @@ export default function RootLayout({
                 <nav className='grid gap-6 text-lg font-medium'>
                   <Link
                     href='/'
-                    className='flex items-center gap-2 text-lg font-semibold'
+                    className='flex items-center gap-2 text-lg font-semibold md:text-base'
                   >
-                    <FolderSync className='h-6 w-6' />
-                    <span className='sr-only'>Acme Inc</span>
+                    <Link2OffIcon className='h-6 w-6' />
+                    <span className='sr-only'>links</span>
                   </Link>
                   <Link
-                    href='/invoices'
+                    href='/manage'
                     className='text-muted-foreground transition-colors hover:text-foreground'
                   >
-                    Invoices
+                    manage
                   </Link>
                   <Link
-                    href='/clientlist'
+                    href='/profile'
                     className='text-muted-foreground transition-colors hover:text-foreground'
                   >
-                    Clients
+                    Profile
                   </Link>
                   <Link
-                    href='/reports'
+                    href='/preview'
                     className='text-muted-foreground transition-colors hover:text-foreground'
                   >
-                    Reports
-                  </Link>
-                  <Link
-                    href='/settings'
-                    className='text-muted-foreground transition-colors hover:text-foreground'
-                  >
-                    Settings
+                    preview
                   </Link>
                 </nav>
               </SheetContent>

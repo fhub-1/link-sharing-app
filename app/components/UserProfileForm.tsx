@@ -1,5 +1,8 @@
 "use client"
 
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import React, { useState } from 'react';
 
 type UserProfile = {
@@ -34,10 +37,10 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ initialData, onSubmit
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                <Label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                     First Name
-                </label>
-                <input
+                </Label>
+                <Input
                     id="firstName"
                     type="text"
                     value={firstName}
@@ -47,10 +50,10 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ initialData, onSubmit
                 />
             </div>
             <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                <Label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
                     Last Name
-                </label>
-                <input
+                </Label>
+                <Input
                     id="lastName"
                     type="text"
                     value={lastName}
@@ -60,10 +63,10 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ initialData, onSubmit
                 />
             </div>
             <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <Label htmlFor="email" className="block text-sm font-medium text-gray-700">
                     Email
-                </label>
-                <input
+                </Label>
+                <Input
                     id="email"
                     type="email"
                     value={email}
@@ -72,10 +75,10 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ initialData, onSubmit
                 />
             </div>
             <div>
-                <label htmlFor="profilePicture" className="block text-sm font-medium text-gray-700">
+                <Label htmlFor="profilePicture" className="block text-sm font-medium text-gray-700">
                     Profile Picture URL
-                </label>
-                <input
+                </Label>
+                <Input
                     id="profilePicture"
                     type="url"
                     value={profilePicture}
@@ -84,12 +87,12 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ initialData, onSubmit
                 />
             </div>
             {error && <p className="text-red-500">{error}</p>}
-            <button
+            <Button
+                variant="default"
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
             >
                 {initialData ? 'Update' : 'Save'} Profile
-            </button>
+            </Button>
         </form>
     );
 };
